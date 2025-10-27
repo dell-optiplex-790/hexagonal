@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "typescript": "latest"
+  },
+  "name": "hexagonal",
+  "version": "1.0.0",
+  "description": "A Typescript-focused web framework that aims to have the least dependancies possible",
+  "main": "src/index.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dell-optiplex-790/hexagonal.git"
+  },
+  "keywords": [
+    "framework",
+    "web",
+    "typescript",
+    "hexagonal",
+    "hexagonal.js"
+  ],
+  "author": "dell-optiplex-790",
+  "license": "MIT"
+}
