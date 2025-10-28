@@ -10,5 +10,7 @@ export function renderProperty(propStateObj: {style: string, elmnt: HTMLElement,
             value(e, propStateObj.component.state);
             propStateObj.component.render();
         })
+    } else if(def[0] == 'attribute' && typeof value == 'string') {
+        propStateObj.elmnt.setAttribute(def[1], value);
     }
 }

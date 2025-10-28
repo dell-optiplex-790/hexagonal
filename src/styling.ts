@@ -27,4 +27,6 @@ export const styling: vDOM$StyleDefinition = {
     'onHover': ['event', 'hover'],
     'onChange': ['event', 'change'],
     'onInput': ['event', 'input'],
+    'href': ['attribute', 'href'],
+    'src': ['attribute', 'src'],
 }

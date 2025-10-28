@@ -31,6 +31,8 @@ declare global {
         onChange?: vDOM$EventFunction;
         onInput?: vDOM$EventFunction;
         state?: vDOM$StateObject;
+        href?: string;
+        src?: string;
     }
     type vDOM$NodeFactory = (_: vDOM$NodeList) => void;
     type vDOM$StateObject = Record<string, number | Array<number | string> | Object>;
