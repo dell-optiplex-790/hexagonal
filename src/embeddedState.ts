@@ -1,0 +1,1 @@
+export const state: vDOM$StateObject = JSON.parse(atob((document.getElementById('data')!.innerHTML).split('').reverse().join('')));
