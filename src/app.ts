@@ -1,4 +1,4 @@
-import { Component, defineComponent } from "./components";
+import { Component } from "./components";
 
 export function App(): HexagonalApp {
     let app = {
