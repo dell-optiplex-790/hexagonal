@@ -33,6 +33,7 @@ declare global {
         state?: vDOM$StateObject;
         href?: string;
         src?: string;
+        value?: string;
     }
     type vDOM$NodeFactory = (_: vDOM$NodeList) => void;
     type vDOM$StateObject = Record<string, number | Array<number | string> | Object>;

@@ -7,7 +7,7 @@ function getEmbeddedState(): {loaded: boolean, state: vDOM$StateObject} {
 document.addEventListener('DOMContentLoaded', () => {
     const dataElmnt = document.getElementById('data');
     if(dataElmnt) {
-        state.state = JSON.parse(atob((dataElmnt.innerHTML).split('').reverse().join('')));
+        state.state = JSON.parse(dataElmnt.innerHTML);
         state.loaded = true;
     }
 })

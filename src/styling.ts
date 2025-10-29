@@ -29,4 +29,5 @@ export const styling: vDOM$StyleDefinition = {
     'onInput': ['event', 'input'],
     'href': ['attribute', 'href'],
     'src': ['attribute', 'src'],
+    'value': ['attribute', 'value']
 }
