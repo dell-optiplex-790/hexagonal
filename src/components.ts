@@ -21,7 +21,7 @@ export function Component(name: string, s?: vDOM$StateObject): vDOM$Component {
         },
         internal: {
             $render: $construct.render,
-            $HTMLObjectRefrence: elmnt
+            $HTMLObjectRefrence: elmnt,
         }
     }
     component.render();

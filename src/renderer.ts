@@ -3,7 +3,7 @@ import { preprocess } from "./preprocessor";
 import { renderProperty } from "./propertyRenderer";
 import { styling } from "./styling";
 
-function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM$Component, props: vDOM$Properties): void {
+function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM$Component, $props: vDOM$Properties): void {
     elmnt.innerHTML = ''; // clear it
     var compList = getComponents();
     for(var i = 0; i < nodeList.length; i++) {
@@ -11,7 +11,7 @@ function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM
         if(Array.isArray(e)) {
             if(compList.indexOf(e[0]) != -1) {
                 var comp = Component(e[0], (e[1].state ?? {}));
-                renderer(comp.name, comp.state, comp);
+                renderer(comp.name, comp.state, comp, e[1]);
                 elmnt.appendChild(comp.internal.$HTMLObjectRefrence);
             } else {
                 var el = document.createElement((<vDOM$Node>nodeList[i])[0]); /* unsafe */
@@ -33,18 +33,18 @@ function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM
             elmnt.appendChild(text);
         }
     }
-    if(props.onComponentLoaded) {
-        props.onComponentLoaded(component);
+
+    if(typeof $props.onComponentLoaded == 'function') {
+        $props.onComponentLoaded(component);
     }
 }
 
-export function renderer(name: string, state: vDOM$StateObject, component: vDOM$Component): vDOM$NodeList {
+export function renderer(name: string, state: vDOM$StateObject, component: vDOM$Component, props?: vDOM$Properties): vDOM$NodeList {
     var processed: vDOM$Node = (preprocess([name,{},
         component.internal.$render(name, state)
     ,`/${name}`]));
     var nodeList: vDOM$NodeList = processed[2];
-    var props: vDOM$Properties = processed[1];
 
-    HTMLrender(nodeList, component.internal.$HTMLObjectRefrence, component, props);
+    HTMLrender(nodeList, component.internal.$HTMLObjectRefrence, component, (props ?? {}));
     return [];
 }
