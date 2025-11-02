@@ -3,7 +3,7 @@ import { preprocess } from "./preprocessor";
 import { renderProperty } from "./propertyRenderer";
 import { styling } from "./styling";
 
-function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM$Component): void {
+function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM$Component, props: vDOM$Properties): void {
     elmnt.innerHTML = ''; // clear it
     var compList = getComponents();
     for(var i = 0; i < nodeList.length; i++) {
@@ -26,20 +26,25 @@ function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM
                 }
                 el.setAttribute('style', stateObj.style);
                 elmnt.appendChild(el);
-                HTMLrender(e[2], el, component);
+                HTMLrender(e[2], el, component, props);
             }
         } else if(typeof e == 'string') {
             var text = document.createTextNode(e);
             elmnt.appendChild(text);
         }
     }
+    if(props.onComponentLoaded) {
+        props.onComponentLoaded(component);
+    }
 }
 
 export function renderer(name: string, state: vDOM$StateObject, component: vDOM$Component): vDOM$NodeList {
-    var processed: vDOM$NodeList = (preprocess([name,{},
+    var processed: vDOM$Node = (preprocess([name,{},
         component.internal.$render(name, state)
-    ,`/${name}`]))[2];
+    ,`/${name}`]));
+    var nodeList: vDOM$NodeList = processed[2];
+    var props: vDOM$Properties = processed[1];
 
-    HTMLrender(processed, component.internal.$HTMLObjectRefrence, component);
+    HTMLrender(nodeList, component.internal.$HTMLObjectRefrence, component, props);
     return [];
 }

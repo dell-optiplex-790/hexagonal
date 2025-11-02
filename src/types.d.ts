@@ -8,6 +8,7 @@ declare global {
     type vDOM$EventFunction = (e: Event, state: vDOM$StateObject) => void;
     type vDOM$NodeList = Array<string | vDOM$Node | vDOM$NodeFactory | vDOM$Component>;
     type vDOM$Property = string | vDOM$Properties | number | Function | boolean | vDOM$StateObject | undefined;
+    type vDOM$InitFunction = (component: vDOM$Component) => void;
     interface vDOM$Properties {
         [key: string]: vDOM$Property;
         bgColor?: string;
@@ -29,6 +30,7 @@ declare global {
         onError?: vDOM$EventFunction;
         onHover?: vDOM$EventFunction;
         onChange?: vDOM$EventFunction;
+        onComponentLoaded?: vDOM$InitFunction;
         onInput?: vDOM$EventFunction;
         state?: vDOM$StateObject;
         href?: string;
