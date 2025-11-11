@@ -2,14 +2,11 @@
   "devDependencies": {
     "typescript": "latest"
   },
-  "name": "hexagonal",
-  "version": "1.2.0",
+  "name": "hexagonal.js",
+  "version": "1.2.1",
   "description": "A Typescript-focused web framework that aims to have the least dependancies possible",
   "main": "src/index.js",
-  "scripts": {
-    "postinstall": "npm run build",
-    "build": "npx tsc"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/dell-optiplex-790/hexagonal.git"
@@ -22,5 +19,6 @@
     "hexagonal.js"
   ],
   "author": "dell-optiplex-790",
-  "license": "MIT"
+  "license": "MIT",
+  "types": "src/types.d.ts"
 }

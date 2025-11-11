@@ -15,7 +15,6 @@ jobs:
           node-version: 20
       - run: npm i
       - run: npx tsc
-      - run: cp src/types.d.ts @types-hexagonal/types.d.ts
 
   publish-npm:
     needs: build
@@ -26,8 +25,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm publish
-      - run: cd @types-hexagonal
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
