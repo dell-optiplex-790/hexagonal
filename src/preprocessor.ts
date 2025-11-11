@@ -1,3 +1,5 @@
+import { vDOM$Node, vDOM$NodeList } from "./types";
+
 export function preprocess(content: vDOM$Node) {
     var c: vDOM$Node = content;
 

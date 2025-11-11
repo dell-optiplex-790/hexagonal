@@ -2,6 +2,7 @@ import { Component, getComponents } from "./components";
 import { preprocess } from "./preprocessor";
 import { renderProperty } from "./propertyRenderer";
 import { styling } from "./styling";
+import { vDOM$NodeList, vDOM$Component, vDOM$Properties, vDOM$Node, vDOM$StateObject } from "./types";
 
 function HTMLrender(nodeList: vDOM$NodeList, elmnt: HTMLElement, component: vDOM$Component, $props: vDOM$Properties): void {
     elmnt.innerHTML = ''; // clear it

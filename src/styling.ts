@@ -1,3 +1,5 @@
+import { vDOM$Property, vDOM$StyleDefinition } from "./types";
+
 export const styling: vDOM$StyleDefinition = {
     'color': ['css', 'color'],
     'bgColor': ['css', 'background-color'],

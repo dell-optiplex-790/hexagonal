@@ -1,3 +1,5 @@
+import { vDOM$StateObject } from "./types";
+
 const state: {loaded: boolean, state: vDOM$StateObject} = {loaded: false, state: {}};
 
 function getEmbeddedState(): {loaded: boolean, state: vDOM$StateObject} {

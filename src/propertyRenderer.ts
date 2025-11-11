@@ -1,4 +1,5 @@
 import { styling } from "./styling";
+import { vDOM$Component, vDOM$Property } from "./types";
 
 export function renderProperty(propStateObj: {style: string, elmnt: HTMLElement, component: vDOM$Component}, name: string, value: vDOM$Property) {
     const def = styling[name];

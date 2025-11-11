@@ -1,4 +1,5 @@
 import { Component } from "./components";
+import { HexagonalApp } from "./types";
 
 export function App(): HexagonalApp {
     let app = {

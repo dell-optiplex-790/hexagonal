@@ -1,4 +1,5 @@
 import { renderer } from './renderer';
+import { vDOM$ComponentConstructor, vDOM$StateObject, vDOM$Component } from './types';
 
 const components: Record<string, vDOM$ComponentConstructor> = {}
 
