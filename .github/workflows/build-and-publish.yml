@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: 20
       - run: npm i
-      - run: cp src/types.d.ts @types-hexagonal/types.d.ts
       - run: npx tsc
+      - run: cp src/types.d.ts @types-hexagonal/types.d.ts
 
   publish-npm:
     needs: build
