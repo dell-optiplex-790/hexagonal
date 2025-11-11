@@ -2,7 +2,7 @@
   "devDependencies": {
     "typescript": "latest"
   },
-  "name": "hexagonal.js",
+  "name": "hexagonal",
   "version": "1.2.0",
   "description": "A Typescript-focused web framework that aims to have the least dependancies possible",
   "main": "src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@types/hexagonal.js",
+  "name": "@types/hexagonal",
   "version": "1.2.0",
   "description": "The TypeScript type definition for Hexagonal.js",
   "main": "types.d.ts",
