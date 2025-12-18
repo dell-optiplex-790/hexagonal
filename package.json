@@ -19,5 +19,6 @@
     "hexagonal.js"
   ],
   "author": "dell-optiplex-790",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }
