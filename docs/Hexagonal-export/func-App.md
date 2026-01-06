@@ -6,3 +6,7 @@ const app = new hexagonal.App();
 console.log(app);
 ```
 Intended output: a `HexagonalApp` object
+Type signature:
+```typescript
+function App(): HexagonalApp
+```
