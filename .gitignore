@@ -1,3 +1,9 @@
+# npm junk
 node_modules
 package-lock.json
+
+# build folder
 build
+
+# confidential "do not ship" files
+*DONOTSHIP*
