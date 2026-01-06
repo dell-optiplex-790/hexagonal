@@ -5,7 +5,7 @@ Example:
 import hexagonal from 'hexagonal.js';
 import componentName /* type: string */ from './components/hello.ts';
 // refer to: ../Hexagonal-export/func-App.md
-const app = new hexagonal.App();
+const app = hexagonal.App();
 
 app.init(componentName);
 ```
