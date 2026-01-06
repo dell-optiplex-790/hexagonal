@@ -4,7 +4,7 @@ Example:
 ```typescript
 import hexagonal from 'hexagonal.js';
 // refer to: ../Hexagonal-export/func-App.md
-const app = new hexagonal.App();
+const app = hexagonal.App();
 
 app.title('cool app');
 ```
