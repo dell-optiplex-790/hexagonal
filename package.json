@@ -3,7 +3,7 @@
     "typescript": "latest"
   },
   "name": "hexagonal.js",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "A Typescript-focused web framework that aims to have the least dependancies possible",
   "main": "build/index.js",
   "scripts": {},
