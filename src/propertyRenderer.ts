@@ -8,7 +8,7 @@ export function renderProperty(propStateObj: {style: string, elmnt: HTMLElement,
             cssKey: def[1]
         };
         const process = def[2] ?? function(_) {return _+'';}
-        propStateObj.style += `${additionalProps.cssKey}:${process(value, additionalProps)};`;
+        propStateObj.style += `${additionalProps.cssKey}:${process(value, additionalProps).split(';')[0]};`;
     } else if(def[0] == 'event' && typeof value == 'function') {
         propStateObj.elmnt.addEventListener(def[1], (e) => {
             value(e, propStateObj.component.state);

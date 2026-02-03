@@ -21,7 +21,6 @@ export default {
     sourcemaps(),
     license({
       banner: `Hexagonal.js Web Bundle (v<%= pkg.version %>)\nCopyright (c) <%= moment().format('YYYY') %> <%= pkg.author %> (<%= pkg.license %> license)\nUsage is not recommended, as the source map takes up most of the file's size. Use \`npm i <%= pkg.name %>\` instead.`,
-      commentStyle: 'ignore',
     })
   ]
 };
