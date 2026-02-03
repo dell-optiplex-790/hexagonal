@@ -38,11 +38,6 @@ export const styling: vDOM$StyleDefinition = {
         return (value || 1).toString();
     }],
     'textAlign': ['css', 'text-align', (value: vDOM$Property, props: internal$additionalCSSProps) => {
-        if(value == 'right') {
-            props.cssKey = 'float';
-            return value;
-        } else {
-            return (value ?? 'left').toString();
-        }
+        return (value ?? 'left').toString();
     }]
 }
