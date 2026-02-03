@@ -26,7 +26,7 @@ export const styling: vDOM$StyleDefinition = {
     'onClick': ['event', 'click'],
     'onLoad': ['event', 'load'],
     'onError': ['event', 'error'],
-    'onHover': ['event', 'mouseover'],
+    'onHover': ['event', ''],
     'onChange': ['event', 'change'],
     'onInput': ['event', 'input'],
     'href': ['attribute', 'href'],
@@ -37,7 +37,12 @@ export const styling: vDOM$StyleDefinition = {
     'zIndex': ['css', 'z-index', (value: vDOM$Property) => {
         return (value || 1).toString();
     }],
-    'textAlign': ['css', 'text-align', (value: vDOM$Property) => {
-        return (value || 'left').toString();
+    'textAlign': ['css', 'text-align', (value: vDOM$Property, props: internal$additionalCSSProps) => {
+        if(value == 'right') {
+            props.cssKey = 'float';
+            return value;
+        } else {
+            return (value ?? 'left').toString();
+        }
     }]
 }
