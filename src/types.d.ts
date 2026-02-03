@@ -35,6 +35,10 @@ export interface vDOM$Properties {
     href?: string;
     src?: string;
     value?: string;
+    tableWidth?: string;
+    tableHeight?: string;
+    zIndex?: number;
+    textAlign?: 'center' | 'left' | 'right';
 }
 export type vDOM$NodeFactory = (_: vDOM$NodeList) => void;
 export type vDOM$StateObject = Record<string, number | Array<number | string> | Object>;
@@ -52,9 +56,13 @@ export interface vDOM$Component extends vDOM$ComponentConstructor {
 export type vDOM$StyleDefinition = Record<string, [
     root: string,
     value: string,
-    processValue?: (value: vDOM$Property) => string
+    processValue?: (value: vDOM$Property, additionalProps: internal$additionalCSSProps) => string
 ]>
 export interface HexagonalApp {
     init: (rootComponent: string) => void;
     title: (newTitle?: string) => string;
+}
+
+export interface internal$additionalCSSProps { 
+    cssKey: string;
 }

@@ -1,11 +1,14 @@
 import { styling } from "./styling";
-import { vDOM$Component, vDOM$Property } from "./types";
+import { internal$additionalCSSProps, vDOM$Component, vDOM$Property } from "./types";
 
 export function renderProperty(propStateObj: {style: string, elmnt: HTMLElement, component: vDOM$Component}, name: string, value: vDOM$Property) {
     const def = styling[name];
     if(def[0] == 'css' && typeof value != 'function') {
+        let additionalProps: internal$additionalCSSProps = {
+            cssKey: def[1]
+        };
         const process = def[2] ?? function(_) {return _+'';}
-        propStateObj.style += `${def[1]}:${process(value)};`;
+        propStateObj.style += `${additionalProps.cssKey}:${process(value, additionalProps)};`;
     } else if(def[0] == 'event' && typeof value == 'function') {
         propStateObj.elmnt.addEventListener(def[1], (e) => {
             value(e, propStateObj.component.state);

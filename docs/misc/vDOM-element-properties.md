@@ -14,11 +14,14 @@ This is a list of element properties.
 * `margin`: The element's margin in CSS units
 * `width`: Width in CSS units
 * `height`: Height in CSS units
-## Font
+* `tableWidth`: [1.3.0+] Table width in CSS units
+* `tableHeight`: [1.3.0+] Table height in CSS units
+## Font / text
 * `fontFamily`: The CSS font faces used
 * `fontSize`: Font size in CSS units
 * `fontWeight`: Font weight (number determining how 'bold' the font should be)
-* `color`: [duplicate] foreground (font) color
+* `color`: [duplicate] foreground (text) color
+* `textAlign`: [1.3.0+] Align text. Values: `left`, `right`, or `center`
 ## Events
 * `onClick`: [eventCallback] Triggered when the user clicks on the element
 * `onLoad`: [eventCallback] Triggered when the element is loaded
