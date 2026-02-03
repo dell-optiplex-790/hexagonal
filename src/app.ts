@@ -11,14 +11,19 @@ export function App(): HexagonalApp {
                 return document.title;
             }
         },
-        init: function(rootComponent: string) {
-            document.addEventListener('DOMContentLoaded', () => {
+        init: function(rootComponent: string, waitForDOM = true) {
+            const func = function() {
                 const rootComp = Component(rootComponent, {})
                 document.body.innerHTML = '';
                 rootComp.render();
                 document.body.appendChild(rootComp.internal.$HTMLObjectRefrence);
                 document.body.style.margin = '0';
-            });
+            };
+            if(waitForDOM) {
+                document.addEventListener('DOMContentLoaded', func);
+            } else {
+                func();
+            }
         },
     };
     return <HexagonalApp>app;

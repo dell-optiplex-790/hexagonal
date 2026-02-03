@@ -12,5 +12,5 @@ app.init(componentName);
 
 Type signature:
 ```typescript
-function init(rootComponent: string): void
+function init(rootComponent: string, waitForDOM = true): void
 ```
