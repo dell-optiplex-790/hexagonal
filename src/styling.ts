@@ -26,7 +26,7 @@ export const styling: vDOM$StyleDefinition = {
     'onClick': ['event', 'click'],
     'onLoad': ['event', 'load'],
     'onError': ['event', 'error'],
-    'onHover': ['event', ''],
+    'onHover': ['event', 'mouseover'],
     'onChange': ['event', 'change'],
     'onInput': ['event', 'input'],
     'href': ['attribute', 'href'],
