@@ -4,6 +4,3 @@ package-lock.json
 
 # build folder
 build
-
-# confidential "do not ship" files
-*DONOTSHIP*
