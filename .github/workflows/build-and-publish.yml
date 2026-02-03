@@ -22,5 +22,6 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: npm i
       - run: npx tsc
+      - run: npm run build:webLib
       - run: npm install -g npm@latest
       - run: npm publish
