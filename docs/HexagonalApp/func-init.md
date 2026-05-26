@@ -12,5 +12,6 @@ app.init(componentName);
 
 Type signature:
 ```typescript
-function init(rootComponent: string, waitForDOM = true): void
+function init(rootComponent: string, waitForDOM: boolean = true, mount: HTMLElement = document.body): void
 ```
+The `mount` argument was added in v1.3.8

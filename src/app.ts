@@ -11,13 +11,13 @@ export function App(): HexagonalApp {
                 return document.title;
             }
         },
-        init: function(rootComponent: string, waitForDOM = true) {
+        init: function(rootComponent: string, waitForDOM: boolean = true, mount: HTMLElement = document.body) {
             const func = function() {
                 const rootComp = Component(rootComponent, {})
-                document.body.innerHTML = '';
+                mount.innerHTML = '';
                 rootComp.render();
-                document.body.appendChild(rootComp.internal.$HTMLObjectRefrence);
-                document.body.style.margin = '0';
+                mount.appendChild(rootComp.internal.$HTMLObjectRefrence);
+                mount.style.margin = '0';
             };
             if(waitForDOM) {
                 document.addEventListener('DOMContentLoaded', func);
