@@ -1,0 +1,1 @@
+module.exports={mode:'production',target:['web','es5'],resolve:{extensions:['.js','.ts'],fallback:{url:false}},output:{filename:'dist.js'},"module":{rules:[{test:/\.ts$/,use:['ts-loader']}]},optimization:{concatenateModules:true,mangleExports:'size'}};
